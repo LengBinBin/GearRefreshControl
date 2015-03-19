@@ -120,12 +120,22 @@ class ViewController: UITableViewController {
     func animateRefreshView() {
         self.isRefreshControlAnimating = true
 
-        UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+        UIView.animateWithDuration( 0.3 , delay: 0, options: .CurveLinear, animations: {
+            
+//            self.centerGear.transform = CGAffineTransformRotate(self.centerGear.transform, CGFloat(M_PI_2))
+//            self.topGear.transform = CGAffineTransformRotate(self.topGear.transform, -CGFloat(M_PI_2))
+//            self.rightGear.transform = CGAffineTransformRotate(self.rightGear.transform, CGFloat(M_PI_2))
+//            self.bottomGear.transform = CGAffineTransformRotate(self.bottomGear.transform, -CGFloat(M_PI_2))
+//            self.leftGear.transform = CGAffineTransformRotate(self.leftGear.transform, CGFloat(M_PI_2))
+//
+            
+            
             self.centerGear.transform = CGAffineTransformRotate(self.centerGear.transform, CGFloat(M_PI_2))
-            self.topGear.transform = CGAffineTransformRotate(self.topGear.transform, -CGFloat(M_PI_2))
-            self.rightGear.transform = CGAffineTransformRotate(self.rightGear.transform, CGFloat(M_PI_2))
-            self.bottomGear.transform = CGAffineTransformRotate(self.bottomGear.transform, -CGFloat(M_PI_2))
-            self.leftGear.transform = CGAffineTransformRotate(self.leftGear.transform, CGFloat(M_PI_2))
+            self.topGear.transform = CGAffineTransformRotate(self.topGear.transform,   -(48/92.0 + 0.033) * (CGFloat(M_PI_2)))
+            self.rightGear.transform = CGAffineTransformRotate(self.rightGear.transform,(48/92.0 + 0.033) * (CGFloat(M_PI_2)))
+            self.bottomGear.transform = CGAffineTransformRotate(self.bottomGear.transform, -(48/92.0 + 0.033) * (CGFloat(M_PI_2)))
+            self.leftGear.transform = CGAffineTransformRotate(self.leftGear.transform,(48/92.0 + 0.033) * (CGFloat(M_PI_2)))
+
             }, completion: { finished in
                 // If still refreshing, keep spinning
                 if (self.refreshControl!.refreshing) {
